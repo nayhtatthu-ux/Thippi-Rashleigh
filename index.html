@@ -753,34 +753,70 @@
 
 /* ───────────────── BOTTOM CONTACT LOGO ───────────────── */
 
-/* CONTACT WRAPPER */
+/* ───────────────── BOTTOM RIGHT LOGOS ───────────────── */
+
 #contact {
   position: relative;
 }
 
-/* BOTTOM RIGHT WEBSITE LOGO */
-.bottom-logo {
+.bottom-logos {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 70px;
-  height: auto;
+  right: 40px;
+  top: 240px; /* move upward beside contact info */
+  display: flex;
+  align-items: center;
+  gap: 14px;
   z-index: 20;
-  opacity: 0.9;
 }
 
-/* MOBILE */
+.bottom-logo {
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* Sala Thai logo */
+.sala-logo {
+  width: 62px;
+}
+
+/* Singha logo */
+.singha-logo {
+  width: 72px;
+}
+
+/* ───────────────── MOBILE ───────────────── */
+
 @media (max-width: 768px) {
-  .bottom-logo {
-    width: 55px;
-    bottom: 14px;
-    right: 14px;
+
+  .bottom-logos {
+    right: 18px;
+    top: 300px;
+    gap: 10px;
+  }
+
+  .sala-logo {
+    width: 45px;
+  }
+
+  .singha-logo {
+    width: 52px;
   }
 }
 
 @media (max-width: 480px) {
-  .bottom-logo {
-    width: 45px;
+
+  .bottom-logos {
+    right: 12px;
+    top: 340px;
+  }
+
+  .sala-logo {
+    width: 38px;
+  }
+
+  .singha-logo {
+    width: 44px;
   }
 }
 
@@ -914,6 +950,51 @@
 .contact-section {
   background: var(--dark2);
   position: relative;
+}
+/* ───────────────── BOTTOM CORNER LOGOS ───────────────── */
+
+.corner-logos {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 30;
+}
+
+.corner-logo {
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* Sala Thai logo */
+.sala-corner-logo {
+  width: 55px;
+}
+
+/* Singha logo */
+.singha-corner-logo {
+  width: 55px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .corner-logos {
+    bottom: 44px;
+    right: 25px;
+    gap: 8px;
+  }
+
+  .sala-corner-logo {
+    width: 42px;
+  }
+
+  .singha-corner-logo {
+    width: 42px;
+  }
 }
   
 </style>
@@ -1119,7 +1200,15 @@
     </div>
     
   </div>
-  <img src="./Singha.jpeg" alt="Logo" class="bottom-logo">
+  <!-- <div class="bottom-logos">
+  <img src="./ll.jpg" alt="Sala Thai Logo" class="bottom-logo sala-logo">
+  <img src="./Singha.jpeg" alt="Singha Logo" class="bottom-logo singha-logo">
+</div> -->
+
+<div class="corner-logos">
+  <img src="./ll.jpg" alt="Sala Thai Logo" class="corner-logo sala-corner-logo">
+  <img src="./Singha.jpeg" alt="Singha Logo" class="corner-logo singha-corner-logo">
+</div>
 </section>
 
 <!-- ─── FOOTER SOCIALS ─── -->
