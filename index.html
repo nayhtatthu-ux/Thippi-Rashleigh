@@ -713,81 +713,7 @@
     .class-card {
       margin-top: 32px;
     }
-
-    #book {
-      grid-template-columns: 1fr;
-    }
-    .book-image-side {
-      padding: 40px 24px 24px;
-    }
-    .book-content {
-      padding: 24px 24px 48px;
-    }
-
-    .festival-grid {
-      grid-template-columns: 1fr;
-    }
-
-    #contact {
-      grid-template-columns: 1fr;
-      padding: 40px 20px;
-    }
-    .form-row {
-      grid-template-columns: 1fr;
-    }
-
-    .email-form {
-      flex-direction: column;
-      gap: 8px;
-    }
-    .email-form input { width: 100%; }
-    .email-form button { width: 100%; }
-
-    .btn-group {
-      flex-direction: column;
-      align-items: center;
-    }
-    .btn-primary, .btn-outline {
-      width: 100%;
-      max-width: 280px;
-      text-align: center;
-    }
-
-    #footer-socials {
-      flex-wrap: wrap;
-      padding: 20px;
-    }
   }
-
-  @media (max-width: 480px) {
-    #hero {
-      padding: 70px 20px 50px;
-    }
-    .hero-title {
-      font-size: 46px;
-    }
-    #classes {
-      padding: 50px 20px 60px;
-    }
-    #festivals {
-      padding: 50px 20px;
-    }
-    #community {
-      padding: 50px 20px;
-    }
-    .contact-right {
-      padding: 24px 20px;
-    }
-#book {
-  background: var(--cream);
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 60px;
-  align-items: center;
-  padding: 60px;
-}
-
-/* ─── BOOK ─── */
 #book {
   background: var(--cream);
   display: grid;
@@ -804,47 +730,87 @@
 }
 
 .book-image {
-  width: 100%;
-  max-width: 260px;
+  width: 180px;
+  max-width: 180px;
+  min-width: 180px;
   height: auto;
   display: block;
+  object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.22);
 }
 
-.book-content {
-  color: var(--dark);
+/* ───────────────── TOP LEFT LOGO ───────────────── */
+
+.top-logo {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 70px;
+  height: auto;
+  z-index: 20;
 }
 
-.tag {
-  display: inline-block;
-  background: var(--green);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 5px 12px;
-  margin-bottom: 20px;
+/* ───────────────── BOTTOM CONTACT LOGO ───────────────── */
+
+/* CONTACT WRAPPER */
+#contact {
+  position: relative;
 }
 
-.book-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 900;
-  color: var(--dark);
-  line-height: 1.15;
-  margin-bottom: 20px;
-}
-
-.book-content p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #444;
-  margin-bottom: 16px;
+/* BOTTOM RIGHT WEBSITE LOGO */
+.bottom-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: auto;
+  z-index: 20;
+  opacity: 0.9;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
+  .bottom-logo {
+    width: 55px;
+    bottom: 14px;
+    right: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-logo {
+    width: 45px;
+  }
+}
+
+/* ───────────────── MOBILE ───────────────── */
+
+@media (max-width: 768px) {
+
+  #about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    min-height: 320px;
+    order: -1;
+  }
+
+  .about-text {
+    padding: 36px 24px;
+  }
+
+  .classes-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 20px;
+  }
+
+  .class-card {
+    margin-top: 32px;
+  }
+
   #book {
     grid-template-columns: 1fr;
     padding: 50px 24px;
@@ -853,19 +819,113 @@
   }
 
   .book-image {
-    max-width: 180px;
+    width: 140px;
+    max-width: 140px;
+    min-width: 140px;
+  }
+
+  .book-content {
+    padding: 24px 24px 48px;
+  }
+
+  .festival-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #contact {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .email-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .email-form input,
+  .email-form button {
+    width: 100%;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  #footer-socials {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .top-logo {
+    width: 55px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .bottom-logo {
+    width: 50px;
+    right: 14px;
+    bottom: 14px;
   }
 }
+
+/* ───────────────── SMALL MOBILE ───────────────── */
+
+@media (max-width: 480px) {
+
+  #hero {
+    padding: 70px 20px 50px;
   }
+
+  .hero-title {
+    font-size: 46px;
+  }
+
+  #classes,
+  #festivals,
+  #community {
+    padding: 50px 20px;
+  }
+
+  .contact-right {
+    padding: 24px 20px 70px;
+  }
+
+  .top-logo {
+    width: 48px;
+  }
+
+  .bottom-logo {
+    width: 42px;
+  }
+}
+.contact-section {
+  background: var(--dark2);
+  position: relative;
+}
+  
 </style>
 </head>
 <body>
 
 <!-- ─── HERO ─── -->
 <section id="hero">
+  <img src="./ll.jpg" alt="Logo" class="top-logo">
   <p class="hero-eyebrow">Chef Thippi Rashleigh's</p>
   <h1 class="hero-title">Thai At Home</h1>
-  <p class="hero-subtitle">Cook The Fla You Remember</p>
+  <p class="hero-subtitle">Cook The Flavours You Remember</p>
   <p class="hero-desc">Authentic Thai flavours rooted in tradition — brought to life with seasonal, locally sourced ingredients right here in Britain.</p>
   <div class="btn-group">
     <a href="https://www.salathaikitchen.co.uk/book-online" class="btn-primary">Join A Cooking Class</a>
@@ -878,7 +938,7 @@
   <div class="about-text">
     <h2 class="about-title">About Thippi</h2>
     <p class="about-subtitle">Food, People &amp; the Heart of Thailand</p>
-    <p>Thippawan Rashleigh, Thippi grew up in a small village northeastern of Thailand, Chaiyaphum with food as her love language. Now based in St Albans, she brings the soul of her hometown to every dish — using Thai herbs and spices, seasonal produce, and locally sourced ingredients to create flavours that are both deeply authentic and beautifully of-the-moment. Thippi is passionate about sustainability: cook what you have at home, in the right portions, and create no waste.</p>
+    <p>Thippawan Rashleigh, Thippi grew up in a small village northeastern of Thailand, Chaiyaphum, with food as her love language. Now based in St Albans, she brings the soul of her hometown to every dish — using Thai herbs and spices, seasonal produce, and locally sourced ingredients to create flavours that are both deeply authentic and beautifully of-the-moment. Thippi is passionate about sustainability: cook what you have at home, in the right portions, and create no waste.</p>
     <p>Her three passions — people, food, and yoga — shape everything she does. Whether she's cooking for first-time visitors or old friends, running a class, or writing her debut cookbook, Thippi's mission is always the same: connection through food.</p>
   </div>
 <div class="about-image">
@@ -901,7 +961,7 @@
       <div class="class-icon">🌿</div>
       <div class="class-card-inner">
         <p class="class-name">Thai Herb Foundations</p>
-        <p class="class-desc">Discover the building blocks of Thai cuisine — lemongrass, galangal, kaffir lime, fresh turmeric. Learn how to work with them confidently at home.</p>
+        <p class="class-desc">Discover the building blocks of Thai cuisine — lemongrass, galangal, kaffir lime, fresh ginger. Learn how to work with them confidently at home.</p>
         <p class="class-level">Beginner Friendly</p>
       </div>
     </div>
@@ -994,14 +1054,18 @@
 </section>
 
 <!-- ─── CONTACT ─── -->
-<section style="background:var(--dark2);">
+<section class="contact-section">
   <div id="contact">
 
     <div class="contact-left">
       <div class="contact-map">
         <!-- Replace with real Google Maps embed -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2463.3!2d-0.3353!3d51.7492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876469c2f12d2b5%3A0xb09f3e4b3a5b4b5b!2sSt%20Albans!5e0!3m2!1sen!2suk!4v1680000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2463.3!2d-0.3452056!3d51.7508863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763f005e12cc49%3A0x7002395a9d7afbf4!2sSala%20Thai%20Kitchen!5e0!3m2!1sen!2suk!4v0000000000000"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
       </div>
 
       <div class="contact-info-row">
@@ -1051,9 +1115,11 @@
         <textarea placeholder="Enter text here"></textarea>
       </div>
       <a href="#" class="btn-red" style="display:block;text-align:center;">Send</a>
+      
     </div>
-
+    
   </div>
+  <img src="./Singha.jpeg" alt="Logo" class="bottom-logo">
 </section>
 
 <!-- ─── FOOTER SOCIALS ─── -->
